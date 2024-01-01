@@ -26,9 +26,9 @@ const App = () => {
   const [toDo, setToDo] = useState("");
   const [toDoList, setToDoList] = useState([]);//[{ id:1,title: "Learn React"},{id:2,title: "Learn Java"},{id:3,title: "Learn Python"}],
   const [id, setId] = useState(1); // 
- 
   console.log(id)
 
+  console.log(toDoList)
  function addToDo(e){
   e.preventDefault()
  // let last_element = toDoList[toDoList.length-1] || {id:0}
@@ -61,7 +61,6 @@ const App = () => {
        <ul>
         {toDoList.map((item)=>{
           return <li key={item.id}>
-           
             {item.title}
             <button onClick={()=>deleteToDo(item.id)}> Delete </button>
           </li>
