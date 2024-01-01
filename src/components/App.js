@@ -32,7 +32,7 @@ const App = () => {
  function addToDo(e){
   e.preventDefault()
  // let last_element = toDoList[toDoList.length-1] || {id:0}
-  setToDo([...toDoList, {id:id, title:toDo }])
+ setToDoList([...toDoList, {id:id, title:toDo }])
   //setToDo([...toDoList, {id:last_element.id+1, title:toDo}])
   setToDo("")
   setId(id+1)
@@ -45,7 +45,7 @@ const App = () => {
       newToDoList.push(t)
     }
   }*/
-  setToDoList(toDoList.filter((item) => item.id != delete_id))
+  setToDoList(toDoList.filter((item) => item.id !== delete_id))
  }
   
   return (
@@ -63,6 +63,7 @@ const App = () => {
           return <li key={item.id}>
             {item.title}
             <button onClick={()=>deleteToDo(item.id)}> Delete </button>
+         
           </li>
         })}
        </ul>
